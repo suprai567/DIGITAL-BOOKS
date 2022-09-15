@@ -5,13 +5,11 @@ import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.digitalbooks.digitalbook.entity.Author;
@@ -46,7 +44,7 @@ class TestAuthorService {
 	}
 
 	@Test
-	public void testGetBooks() throws Exception {
+	public void testGetBook() throws Exception {
 		List<Book> book = new ArrayList<>();
 		Book books = new Book();
 		books.setId(1);
@@ -65,7 +63,7 @@ class TestAuthorService {
 	}
 
 	@Test
-	public void testGetAuthors() throws Exception {
+	public void testGetAuthor() throws Exception {
 		List<Author> author = new ArrayList<>();
 		Author authors = new Author();
 		authors.setId(1);
@@ -80,13 +78,13 @@ class TestAuthorService {
 
 	@Test
 	void testSaveAuthor() {
-		Author authors = new Author();
-		authors.setId(1);
-		authors.setAge(40);
-		authors.setEmail("book123@gmail.com");
-		authors.setName("Prince");
-		when(authorRepository.save(authors)).thenReturn(authors);// mock
-		bookSearchService.saveAuthor(authors);
-		assertEquals(1, authors.getId());
+		Author author = new Author();
+		author.setId(1);
+		author.setAge(40);
+		author.setEmail("book123@gmail.com");
+		author.setName("Prince");
+		when(authorRepository.save(author)).thenReturn(author);// mock
+		bookSearchService.saveAuthor(author);
+		assertEquals(1, author.getId());
 	}
 }
