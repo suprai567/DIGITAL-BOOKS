@@ -1,5 +1,8 @@
 package com.digitalbooks.digitalbook.entity;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -7,7 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 @Entity
 public class Book {
@@ -23,14 +25,13 @@ public class Book {
 	private String logo;
 	@NotBlank(message = "Publisher cannot be blank #######")
 	private String publisher;
-	private String publisedDate;
+	private LocalDate publisedDate;
 
-	@NotNull(message = "active cannot be null#######")
-	private Boolean active;
-
-	@Enumerated(EnumType.STRING)
-	private Category category;
-	// private String category;
+	private boolean active;
+	/*
+	 * @Enumerated(EnumType.STRING) private Category category;
+	 */
+	private String category;
 	private float price;
 
 	public int getId() {
@@ -41,11 +42,11 @@ public class Book {
 		this.id = id;
 	}
 
-	public Category getCategory() {
+	public String getCategory() {
 		return category;
 	}
 
-	public void setCategory(Category category) {
+	public void setCategory(String category) {
 		this.category = category;
 	}
 
@@ -89,11 +90,11 @@ public class Book {
 		this.publisher = publisher;
 	}
 
-	public String getPublisedDate() {
+	public LocalDate getPublisedDate() {
 		return publisedDate;
 	}
 
-	public void setPublisedDate(String publisedDate) {
+	public void setPublisedDate(LocalDate publisedDate) {
 		this.publisedDate = publisedDate;
 	}
 

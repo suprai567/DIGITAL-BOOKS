@@ -97,24 +97,6 @@ public class BookSearchController {
 		return bookSearchService.getBooksByPurchseId(purchaseId);
 	}
 
-	/**
-	 * 
-	 * This method always returns the purchased book by giving purchaseId
-	 *
-	 * @param emailId contains emailId of the reader
-	 * @param bookId  contains id of book
-	 * @return returns the response based on emailId and bookId and if book is not
-	 *         present it will return response as not found
-	 */
-	/*
-	 * @GetMapping("/readers/{emailId}/books/{bookId}") public ResponseEntity<Book>
-	 * getBook(@PathVariable String emailId, @PathVariable Integer bookId) {
-	 * ResponseEntity<Book> response; Book book =
-	 * bookSearchService.getBooks(bookId); if (book == null) { response = new
-	 * ResponseEntity<>(HttpStatus.NOT_FOUND); } else { response = new
-	 * ResponseEntity<>(book, HttpStatus.OK); } return response; }
-	 */
-
 	@PostMapping
 	public Integer saveBook(@RequestBody Book books) {
 		bookSearchService.save(books);
