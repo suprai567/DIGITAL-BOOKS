@@ -7,7 +7,7 @@ import com.digitalbooks.digitalbook.entity.Reader;
 
 public interface ReaderRepository extends JpaRepository<Reader, String>{
 	
-	@Query(value="select * from book.reader where emailId=?1",nativeQuery = true)
+	@Query(value="select * from book.reader where email_id=?1",nativeQuery = true)
 	Reader findByEmail(String emailId);
 
 }
