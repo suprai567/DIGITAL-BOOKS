@@ -1,0 +1,33 @@
+<div>
+    <div align="center">
+        <h1 style="border:rgb(10, 7, 1); border-width:5px; border-style:solid;">Search Books </h1>
+        <table>
+            <tr>
+                <td>Category</td>
+                <Td>
+                    <select>
+                        <option *ngFor="let category of categoryList"> {{category}} </option>
+                    </select>
+                </Td>
+            </tr>
+            <tr>
+                <td>Author</td>
+                <td><input [(ngModel)]='book.author' /></td>
+            </tr>
+            <tr>
+                <td>Publisher</td>
+                <td><input [(ngModel)]='book.publisher' /></td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td><input [(ngModel)]='book.price' type='number' /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div align="right"><button (click)='search()' style="margin: 2px;" class="btn btn-primary"> search</button></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
