@@ -53,7 +53,7 @@ public class TestAuthorController {
 		books.setTitle("Bhagat");
 		books.setAuthor("Chetan");
 		books.setLogo("2 States");
-		books.setCategory("comic");
+		books.setCategory(null);
 		books.setPrice(134);
 		books.setPublisher("Rupa Publication");
 		books.setPublisedDate("2022-09-08");
