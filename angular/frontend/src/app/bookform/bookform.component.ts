@@ -9,13 +9,13 @@ import { BookService } from   '../book.service'
 export class BookformComponent implements OnInit {
   todaysDate: Date = new Date();
   //author:Author = new Author (1,"Supriya",25,"sup123@gmail.com");
-  book:Book= new Book("Bhagat", "2States","comic","Rupa Publication",134,"Chetan",this.todaysDate,true);
-  categoryList: any = ['comic', 'horror', 'action', 'drama', 'adventure'];
+  book:Book= new Book("Bhagat", "2States","Comic","Rupa Publication",134,"Chetan",this.todaysDate,true);
+  categoryList: any = ['Comic','Drama', 'Science','Romance','Detective','Horror','Adventure'];  
   constructor(public bookService:BookService) { }
   ngOnInit(): void {
   }
   save() {
-    console.log('clicked');
+    console.log('Book Saved');
     //Ajax call
     const observable = this.bookService.saveBook(this.book);
     observable.subscribe((response) => {//success handler
