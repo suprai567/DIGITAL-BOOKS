@@ -1,11 +1,9 @@
 package com.digitalbooks.digitalbook.entity;
 
-import java.time.LocalDate;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,7 +23,8 @@ public class Book {
 	private String logo;
 	@NotBlank(message = "Publisher cannot be blank #######")
 	private String publisher;
-	private LocalDate publisedDate;
+	@Column(name = "published_date")
+	private Date publishedDate;
 
 	private boolean active;
 	/*
@@ -33,6 +32,14 @@ public class Book {
 	 */
 	private String category;
 	private float price;
+
+	public Date getPublishedDate() {
+		return publishedDate;
+	}
+
+	public void setPublishedDate(Date publishedDate) {
+		this.publishedDate = publishedDate;
+	}
 
 	public int getId() {
 		return id;
@@ -90,14 +97,6 @@ public class Book {
 		this.publisher = publisher;
 	}
 
-	public LocalDate getPublisedDate() {
-		return publisedDate;
-	}
-
-	public void setPublisedDate(LocalDate publisedDate) {
-		this.publisedDate = publisedDate;
-	}
-
 	public Book() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -106,7 +105,7 @@ public class Book {
 	@Override
 	public String toString() {
 		return "Book [id=" + id + ", category=" + category + ", author=" + author + ", price=" + price + ", logo="
-				+ logo + ", title=" + title + ", publisher=" + publisher + ", publisedDate=" + publisedDate + "]";
+				+ logo + ", title=" + title + ", publisher=" + publisher + ", publishedDate=" + publishedDate + "]";
 	}
 
 }
